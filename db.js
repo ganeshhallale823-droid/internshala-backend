@@ -3,9 +3,9 @@ require("dotenv").config();
 
 const connect = async () => {
   try {
-    const url = process.env.MONGO_URL;
+    const url = process.env.DATABASE_URL;   // 👈 change here
     if (!url) {
-      throw new Error("MONGO_URL is not defined");
+      throw new Error("DATABASE_URL is not defined");
     }
 
     await mongoose.connect(url);
